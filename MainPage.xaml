@@ -115,7 +115,9 @@
                             x:Name="pickerAvailablePorts"/>
                         <Button 
                         x:Name="BtnOpenPort"
-                        Text="Open Port"    
+                        Text="Open Port"
+                        SemanticProperties.Hint="Open comport"
+                        Clicked="BtnOpenPort_Clicked"
                             />
                     </HorizontalStackLayout>
 

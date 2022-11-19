@@ -35,7 +35,32 @@ public partial class MainPage : ContentPage
 
     private void MyMainThreadCode()
     {
-        labelRecievedPacket.Text = newPacket;
+        labelRecievedPacket.Text = newPacket;   //display recieved packet in debug menu
+        //The following are a series of checks to validate packet data has not been corrupted
+        if(newPacket.Length > 37)   //is it the right quantity of things?
+        {
+            if(newPacket.Substring(0, 3) == "###") //Are the first three things the header?
+            {
+                //calcuate a local copy of the check sum for comparison
+                int calChkSum = 0;
+                for (int i = 3; i < 34; i++)                                     //packet sum but only consider items after the header, ie dynamic data
+                {
+                    calChkSum += (byte)newPacket[i];
+                }
+                calChkSum %= 1000;												//mod 1000 the packet to remove the reduent 1 prefix ie truncation
+                int recChkSum = Convert.ToInt32(newPacket.Substring(34, 3));    //extract recieved packet and convert to an integer for comparison
+                //complete final packet validation test
+                if (recChkSum == calChkSum)
+                {
+                    //packet is entierly trustworthy, now pass parsed data to Solar Class
+                }
+                else
+                {
+                    //packet is untrusted
+                    chkSumError++;
+                }
+            }
+        }
     }
 
     private void BtnOpenPort_Clicked(object sender, EventArgs e)

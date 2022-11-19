@@ -7,9 +7,122 @@
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Center">
-        
- 
+            VerticalOptions="Start">
+            <Label
+                Text="Schematic"
+                FontSize="Header"
+                HorizontalOptions="Center"
+                    />
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Image
+                    Source="providedschematic.png"
+                    />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <VerticalStackLayout>
+                    <Label
+                        Text="Reported Values"
+                        FontSize="Header"
+                        HorizontalOptions="Center"
+                        />
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center">
+                        <VerticalStackLayout
+                        Padding="20,0">
+                            <Label
+                            Text="Solar Panel Voltage:"
+                            />
+                            <Label
+                            Text="Solar Panel Current:"
+                            />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                            Text="000.000[V]"
+                            />
+                            <Label
+                            Text="000.000[A]"
+                            />
+                        </VerticalStackLayout>
+                        
+                        <VerticalStackLayout
+                            Padding="20,0">
+                            <Label
+                            Text="Battery Voltage:"
+                            />
+                            <Label
+                            Text="Battery Current:"
+                            />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                            Text="000.000[V]"
+                            />
+                            <Label
+                            Text="000.000[A]"
+                            />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Padding="20,0">
+                            <Label
+                            Text="Load 1 Current:"
+                            />
+                            <Label
+                            Text="Load 2 Current:"
+                            />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout
+                            HorizontalOptions="End">
+                            <Label
+                            Text="000.000[A]"
+                            />
+                            <Label
+                            Text="000.000[A]"
+                            />
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+                        
+                </VerticalStackLayout>
+                
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Label
+                    Text="Load Toggle Buttons"
+                    FontSize="Header"
+                    />
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <VerticalStackLayout>
+                    <Label Text="Load 1"/>
+                    <Switch IsToggled="False"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Load 2"/>
+                    <Switch IsToggled="False"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Zip bomb the instructor"/>
+                    <Switch IsToggled="False"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Label
+                    Text="Enable serial debugging data"
+                    />
+                <CheckBox
+                    x:Name="chkBoxEnaSerDebug"
+                    />
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 

@@ -47,7 +47,7 @@
                             Text="000.000[A]"
                             />
                         </VerticalStackLayout>
-                        
+
                         <VerticalStackLayout
                             Padding="20,0">
                             <Label
@@ -86,19 +86,19 @@
                         </VerticalStackLayout>
 
                     </HorizontalStackLayout>
-                        
+
                 </VerticalStackLayout>
-                
+
             </HorizontalStackLayout>
-            
+
             <HorizontalStackLayout
                 HorizontalOptions="Center">
                 <Label
-                    Text="Load Toggle Buttons"
+                    Text="User controls"
                     FontSize="Header"
                     />
             </HorizontalStackLayout>
-            
+
             <HorizontalStackLayout HorizontalOptions="Center">
                 <VerticalStackLayout>
                     <Label Text="Load 1"/>
@@ -109,8 +109,16 @@
                     <Switch IsToggled="False"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout>
-                    <Label Text="Zip bomb the instructor"/>
-                    <Switch IsToggled="False"/>
+                    <Label Text="Port Control"/>
+                    <HorizontalStackLayout>
+                        <Picker 
+                            x:Name="pickerAvailablePorts"/>
+                        <Button 
+                        x:Name="BtnOpenPort"
+                        Text="Open Port"    
+                            />
+                    </HorizontalStackLayout>
+
                 </VerticalStackLayout>
             </HorizontalStackLayout>
 
@@ -121,6 +129,23 @@
                     />
                 <CheckBox
                     x:Name="chkBoxEnaSerDebug"
+                    />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label
+                    Text="Recieved Packet:"
+                    />
+                <Label 
+                    x:Name="labelRecievedPacket" 
+                    Text="packetshowhere"
+                       />
+                <Entry
+                    x:Name="entryDebugPacketOverRide"
+                    Text="###1234Chk"
+                    />
+                <Button
+                    x:Name="Send"
+                    Text="Send"
                     />
             </HorizontalStackLayout>
         </VerticalStackLayout>

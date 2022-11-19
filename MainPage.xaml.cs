@@ -55,6 +55,7 @@ public partial class MainPage : ContentPage
                     //packet is entierly trustworthy, now pass parsed data to Solar Class
                     solarclass.parsePacket(newPacket);  //pass solar class packet so it will do its thing
                     solarclass.VoltageDisplay(labelSolarPanelVoltage, labelBatteryVoltage);   //display the project voltages
+                    solarclass.CurrentDisplay(labelLoad1Current, labelLoad2Current, labelBatteryCurrent);
                 }
                 else
                 {

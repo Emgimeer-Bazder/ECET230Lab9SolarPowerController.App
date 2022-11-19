@@ -1,5 +1,4 @@
 ﻿using System.IO.Ports;
-
 namespace ECET230Lab9SolarPowerController;
 
 public partial class MainPage : ContentPage
@@ -9,6 +8,7 @@ public partial class MainPage : ContentPage
     private int chkSumError = 0;    //tally of recieved packets with different check sums
 
     SerialPort serialport = new SerialPort();
+    SolarClass solarclass = new SolarClass();
     public MainPage()
 	{
 		InitializeComponent();
@@ -53,6 +53,7 @@ public partial class MainPage : ContentPage
                 if (recChkSum == calChkSum)
                 {
                     //packet is entierly trustworthy, now pass parsed data to Solar Class
+                    solarclass.VoltageDisplay(newPacket.Substring(6, 4), labelSolarPanelVoltage);   //display the solar panel voltage
                 }
                 else
                 {

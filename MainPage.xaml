@@ -41,6 +41,7 @@
                         </VerticalStackLayout>
                         <VerticalStackLayout>
                             <Label
+                            x:Name="labelSolarPanelVoltage"
                             Text="000.000[V]"
                             />
                             <Label

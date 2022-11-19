@@ -60,6 +60,7 @@
                         </VerticalStackLayout>
                         <VerticalStackLayout>
                             <Label
+                            x:Name="labelBatteryVoltage"
                             Text="000.000[V]"
                             />
                             <Label

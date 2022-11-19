@@ -53,7 +53,8 @@ public partial class MainPage : ContentPage
                 if (recChkSum == calChkSum)
                 {
                     //packet is entierly trustworthy, now pass parsed data to Solar Class
-                    solarclass.VoltageDisplay(newPacket.Substring(6, 4), labelSolarPanelVoltage);   //display the solar panel voltage
+                    solarclass.parsePacket(newPacket);  //pass solar class packet so it will do its thing
+                    solarclass.VoltageDisplay(labelSolarPanelVoltage, labelBatteryVoltage);   //display the project voltages
                 }
                 else
                 {

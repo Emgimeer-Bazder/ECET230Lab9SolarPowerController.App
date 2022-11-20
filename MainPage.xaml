@@ -107,11 +107,18 @@
             <HorizontalStackLayout HorizontalOptions="Center">
                 <VerticalStackLayout>
                     <Label Text="Load 1"/>
-                    <Switch IsToggled="False"/>
+                    <Switch 
+                        x:Name="switchLoad1CurrentSink"
+                        Toggled="switchLoad1CurrentSink_Toggled"
+                        IsToggled="False"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout>
-                    <Label Text="Load 2"/>
-                    <Switch IsToggled="False"/>
+                    <Label Text="Load 2"
+                           x:Name="switchLoad2CurrentSink"/>
+                    <Switch 
+                        x:Name="switchLoad2CurrentSinkName"
+                        Toggled="switchLoad2CurrentSink_Toggled"
+                        IsToggled="False"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout>
                     <Label Text="Port Control"/>

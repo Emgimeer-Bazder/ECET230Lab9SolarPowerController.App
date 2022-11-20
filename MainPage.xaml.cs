@@ -1,4 +1,6 @@
 ﻿using System.IO.Ports;
+using System.Text;
+
 namespace ECET230Lab9SolarPowerController;
 
 public partial class MainPage : ContentPage
@@ -9,6 +11,7 @@ public partial class MainPage : ContentPage
 
     SerialPort serialport = new SerialPort();
     SolarClass solarclass = new SolarClass();
+
     public MainPage()
 	{
 		InitializeComponent();
@@ -83,5 +86,46 @@ public partial class MainPage : ContentPage
             bPortOpen = false;
         }
     }
+
+    private void switchLoad1CurrentSink_Toggled(object sender, ToggledEventArgs e)
+    {
+        if(switchLoad1CurrentSink.IsToggled)
+        {
+            PacketSend(solarclass.controlPacketUpdate(io0: 0));
+        }
+        if(!switchLoad1CurrentSink.IsToggled)
+        {
+            PacketSend(solarclass.controlPacketUpdate(io0: 1));
+        }
+    }
+    public void PacketSend(string UserSentPacket)
+    {
+        try
+        {
+            string messageOut = UserSentPacket;                         //capture user inputed packet
+            messageOut += "\r\n";                                       //appends carriage return line feed
+            byte[] messageBytes = Encoding.UTF8.GetBytes(messageOut);   //ensures item is actually a byte
+            serialport.Write(messageBytes, 0, messageBytes.Length);     //send our stuff over serial port
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Alert", ex.Message, "Ok");
+        }
+    }
+
+    private void switchLoad2CurrentSink_Toggled(object sender, ToggledEventArgs e)
+    {
+        if (switchLoad2CurrentSinkName.IsToggled)
+        {
+            PacketSend(solarclass.controlPacketUpdate(io1: 0));
+        }
+        if (!switchLoad2CurrentSinkName.IsToggled)
+        {
+            PacketSend(solarclass.controlPacketUpdate(io1: 1));
+        }
+    }
 }
+
+
+
 

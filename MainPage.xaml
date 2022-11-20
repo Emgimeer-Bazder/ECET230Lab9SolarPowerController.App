@@ -143,9 +143,11 @@
                     />
                 <CheckBox
                     x:Name="chkBoxEnaSerDebug"
+                    CheckedChanged="chkBoxEnaSerDebug_CheckedChanged"
                     />
             </HorizontalStackLayout>
-            <HorizontalStackLayout>
+            <HorizontalStackLayout
+                x:Name="DebugDataTopLevelStack">
                 <Label
                     Text="Recieved Packet:"
                     />

@@ -124,6 +124,18 @@ public partial class MainPage : ContentPage
             PacketSend(solarclass.controlPacketUpdate(io1: 1));
         }
     }
+
+    private void chkBoxEnaSerDebug_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        if (chkBoxEnaSerDebug.IsChecked)
+        {
+            DebugDataTopLevelStack.IsVisible = true;
+        }
+        else
+        {
+            DebugDataTopLevelStack.IsVisible = false;
+        }
+    }
 }
 
 
